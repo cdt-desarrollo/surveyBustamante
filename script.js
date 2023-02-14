@@ -55,11 +55,14 @@ function sendData() {
   }
   axios(config)
   .then(function(response){
-    Swal.fire('Información enviada, ya puede cerrar la pestaña')
-    console.log(response.data)
+    Swal.fire({
+      position: 'center',
+      icon: 'success',
+      title: 'Información enviada, ya puede cerrar esta ventana',
+      showConfirmButton: true,
+    })
   })
   .catch(function(error){
     Swal.fire('Existe un error con la información que estás escribiendo')
-    console.log(error)
   })
 }
