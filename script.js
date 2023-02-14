@@ -98,14 +98,15 @@ function sendData() {
         icon: "success",
         title: "Información enviada, ya puede cerrar esta ventana",
         showConfirmButton: true,
-        confirmButtonColor: '#3085d6',
+        confirmButtonColor: "#3085d6",
       });
     })
     .catch(function (error) {
       Swal.fire({
-        icon: 'error',
-        title: '¡Algo salió mal!, pon un 0 (número cero) en los recuadros vacíos',
-        confirmButtonColor: '#3085d6',
-      })
+        icon: "error",
+        title:
+          "¡Algo salió mal!, pon un 0 (número cero) en los recuadros vacíos",
+        confirmButtonColor: "#3085d6",
+      });
     });
 }
