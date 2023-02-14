@@ -97,15 +97,19 @@ function sendData() {
         position: "center",
         icon: "success",
         title: "Información enviada, ya puede cerrar esta ventana",
-        showConfirmButton: true,
+        showConfirmButton: false,
         confirmButtonColor: "#3085d6",
       });
+      document.getElementById("deleteDiv").remove();
+      let divToInsertHTMLTags = document.getElementById("divToInsertHTMLTags");
+      let notification = document.createElement("div");
+      notification.innerHTML = `<h4 class="text-center">Ya puedes cerrar esta ventana/pestaña</h4>`;
+      divToInsertHTMLTags.insertAdjacentElement('beforeend', notification);
     })
     .catch(function (error) {
       Swal.fire({
         icon: "error",
-        title:
-          "¡Algo salió mal!, pon un 0 (número cero) en los recuadros vacíos",
+        title: "¡Algo salió mal!",
         confirmButtonColor: "#3085d6",
       });
     });
