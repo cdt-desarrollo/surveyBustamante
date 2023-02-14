@@ -1,4 +1,3 @@
-
 function sendData() {
   companyName = document.getElementById("companyName").value;
   staffName = document.getElementById("staffName").value;
@@ -21,52 +20,74 @@ function sendData() {
   q8o1 = parseInt(document.getElementById("q8o1").value);
   q8o2 = parseInt(document.getElementById("q8o2").value);
   q8o3 = parseInt(document.getElementById("q8o3").value);
-  console.log(companyName, staffName,q1o1, q1o2,q1o3, q2o1, q2o2, q2o3, q3o1, q3o2, q3o3, q4o1, q5o1, q5o2,q6o1,q6o2, q7o1, q7o2,q8o1, q8o2, q8o3);
-  Swal.fire('Enviando información')
+  console.log(
+    companyName,
+    staffName,
+    q1o1,
+    q1o2,
+    q1o3,
+    q2o1,
+    q2o2,
+    q2o3,
+    q3o1,
+    q3o2,
+    q3o3,
+    q4o1,
+    q5o1,
+    q5o2,
+    q6o1,
+    q6o2,
+    q7o1,
+    q7o2,
+    q8o1,
+    q8o2,
+    q8o3
+  );
+  Swal.fire("Enviando información");
 
   var data = JSON.stringify({
-    "companyName": `${companyName}`,
-    "staffName": `${staffName}`,    
-    "q1o1": `${q1o1}`,
-    "q1o2": `${q1o2}`,
-    "q1o3": `${q1o3}`,
-    "q2o1": `${q2o1}`,
-    "q2o2": `${q2o2}`,
-    "q2o3": `${q2o3}`,
-    "q3o1": `${q3o1}`,
-    "q3o2": `${q3o2}`,
-    "q3o3": `${q3o3}`,
-    "q4o1": `${q4o1}`,
-    "q5o1": `${q5o1}`,
-    "q5o2": `${q5o2}`,
-    "q6o1": `${q6o1}`,
-    "q6o2": `${q6o2}`,
-    "q7o1": `${q7o1}`,
-    "q7o2": `${q7o2}`,
-    "q8o1": `${q8o1}`,
-    "q8o2": `${q8o2}`,
-    "q8o3": `${q8o3}`,
-  })
+    companyName: `${companyName}`,
+    staffName: `${staffName}`,
+    q1o1: `${q1o1}`,
+    q1o2: `${q1o2}`,
+    q1o3: `${q1o3}`,
+    q2o1: `${q2o1}`,
+    q2o2: `${q2o2}`,
+    q2o3: `${q2o3}`,
+    q3o1: `${q3o1}`,
+    q3o2: `${q3o2}`,
+    q3o3: `${q3o3}`,
+    q4o1: `${q4o1}`,
+    q5o1: `${q5o1}`,
+    q5o2: `${q5o2}`,
+    q6o1: `${q6o1}`,
+    q6o2: `${q6o2}`,
+    q7o1: `${q7o1}`,
+    q7o2: `${q7o2}`,
+    q8o1: `${q8o1}`,
+    q8o2: `${q8o2}`,
+    q8o3: `${q8o3}`,
+  });
 
   var config = {
-    method: 'post',
-    url: 'https://responses-5389.restdb.io/rest/responses',
+    method: "post",
+    url: "https://responses-5389.restdb.io/rest/responses",
     headers: {
-      'x-apikey': '63ea9066478852088da681dd',
-      'Content-type': 'application/json'
+      "x-apikey": "63ea9066478852088da681dd",
+      "Content-type": "application/json",
     },
-    data: data
-  }
+    data: data,
+  };
   axios(config)
-  .then(function(response){
-    Swal.fire({
-      position: 'center',
-      icon: 'success',
-      title: 'Información enviada, ya puede cerrar esta ventana',
-      showConfirmButton: true,
+    .then(function (response) {
+      Swal.fire({
+        position: "center",
+        icon: "success",
+        title: "Información enviada, ya puede cerrar esta ventana",
+        showConfirmButton: true,
+      });
     })
-  })
-  .catch(function(error){
-    Swal.fire('Existe un error con la información que estás escribiendo')
-  })
+    .catch(function (error) {
+      Swal.fire("Existe un error con la información que estás escribiendo");
+    });
 }
