@@ -13,10 +13,13 @@ function sendData() {
   q4o1 = parseInt(document.getElementById("q4o1").value);
   q5o1 = parseInt(document.getElementById("q5o1").value);
   q5o2 = parseInt(document.getElementById("q5o2").value);
+  q5o3 = parseInt(document.getElementById("q5o3").value);
   q6o1 = parseInt(document.getElementById("q6o1").value);
   q6o2 = parseInt(document.getElementById("q6o2").value);
+  q6o3 = parseInt(document.getElementById("q6o3").value);
   q7o1 = parseInt(document.getElementById("q7o1").value);
   q7o2 = parseInt(document.getElementById("q7o2").value);
+  q7o3 = parseInt(document.getElementById("q7o3").value);
   q8o1 = parseInt(document.getElementById("q8o1").value);
   q8o2 = parseInt(document.getElementById("q8o2").value);
   q8o3 = parseInt(document.getElementById("q8o3").value);
@@ -35,15 +38,22 @@ function sendData() {
     q4o1,
     q5o1,
     q5o2,
+    q5o3,
     q6o1,
     q6o2,
+    q6o3,
     q7o1,
     q7o2,
+    q7o3,
     q8o1,
     q8o2,
     q8o3
   );
-  Swal.fire("Enviando información");
+  Swal.fire({
+    position: "center",
+    title: "Enviando información...",
+    showConfirmButton: false,
+  });
 
   var data = JSON.stringify({
     companyName: `${companyName}`,
@@ -60,10 +70,13 @@ function sendData() {
     q4o1: `${q4o1}`,
     q5o1: `${q5o1}`,
     q5o2: `${q5o2}`,
+    q5o3: `${q5o3}`,
     q6o1: `${q6o1}`,
     q6o2: `${q6o2}`,
+    q6o3: `${q6o3}`,
     q7o1: `${q7o1}`,
     q7o2: `${q7o2}`,
+    q7o3: `${q7o3}`,
     q8o1: `${q8o1}`,
     q8o2: `${q8o2}`,
     q8o3: `${q8o3}`,
@@ -85,9 +98,14 @@ function sendData() {
         icon: "success",
         title: "Información enviada, ya puede cerrar esta ventana",
         showConfirmButton: true,
+        confirmButtonColor: '#3085d6',
       });
     })
     .catch(function (error) {
-      Swal.fire("Existe un error con la información que estás escribiendo");
+      Swal.fire({
+        icon: 'error',
+        title: '¡Algo salió mal!, pon un 0 (número cero) en los recuadros vacíos',
+        confirmButtonColor: '#3085d6',
+      })
     });
 }
