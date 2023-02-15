@@ -220,10 +220,16 @@
   </a>
 </footer>
 <script>
-  Swal.fire(
-  'No dejar recuadros vacíos',
-  'Escribe un 0 (número cero) en los recuadros que no vayas a utilizar',
-  'info',
-)
+//   Swal.fire(
+//   'No dejar recuadros vacíos',
+//   'Escribe un 0 (número cero) en los recuadros que no vayas a utilizar',
+//   'info',
+// )
+Swal.fire({
+        icon: "info",
+        title: "¡No dejar recuadros vacíos!",
+        text: "Escribe un 0 (número cero) en los recuadros que no vayas a utilizar",
+        confirmButtonColor: "#3085d6",
+      });
 </script>
 </html>

@@ -53,6 +53,9 @@ function sendData() {
     position: "center",
     title: "Enviando información...",
     showConfirmButton: false,
+    didOpen: () => {
+      Swal.showLoading()
+    }
   });
 
   var data = JSON.stringify({
