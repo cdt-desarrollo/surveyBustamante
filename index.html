@@ -25,21 +25,34 @@
   <div class="container-fluid" id="deleteDiv">
     <section class="container-fluid">
       <div>
-        <h1 class="text-left">Centro Metropolitano de Información Económica y Empresarial - Cuestionario Sector Inmobiliario 2022</h1>
+        <h1 class="text-left">Centro Metropolitano de Información Económica y Empresarial - Encuesta Sector Inmobiliario 2022</h1>
         <h4 class="text-justify">Agradecemos de su apoyo en contestar la siguiente encuesta, sus respuestas nos ayudarán para conocer la situación en el sector inmobiliario y posteriormente generar un registro histórico.
         </h4>
+        <h5 style="color: red;">Recuerda que no debes dejar ningún recuadro vacío, escribe un 0 (número cero) en los recuadros que no vayas a utilizar.</h5>
       </div>
       <div class="input-group mb-2">
         <div class="input-group-prepend">
           <span class="input-group-text bg-dark text-white" id="inputGroup-sizing-default">Empresa</span>
         </div>
-        <input type="text" id ="companyName" class="form-control" required min="0" placeholder="Nombre de la empresa">
+        <input type="text" id ="companyName" class="form-control" required>
       </div>
       <div class="input-group mb-2">
         <div class="input-group-prepend">
-          <span class="input-group-text bg-dark text-white" id="inputGroup-sizing-default">Nombre y Apellido</span>
+          <span class="input-group-text bg-dark text-white" id="inputGroup-sizing-default">Nombre completo</span>
         </div>
-        <input type="text" id ="staffName" class="form-control" required min="0" placeholder="Nombre y apellido de quien llena esta encuesta">
+        <input type="text" id ="staffName" class="form-control" required>
+      </div>
+      <div class="input-group mb-2">
+        <div class="input-group-prepend">
+          <span class="input-group-text bg-dark text-white" id="inputGroup-sizing-default">Correo</span>
+        </div>
+        <input type="text" id ="email" class="form-control" required>
+      </div>
+      <div class="input-group mb-2">
+        <div class="input-group-prepend">
+          <span class="input-group-text bg-dark text-white" id="inputGroup-sizing-default">Teléfono</span>
+        </div>
+        <input type="text" id ="phone" class="form-control" required>
       </div>
       <div>
         <h3>Oferta durante 2022</h3>
@@ -63,7 +76,6 @@
         </div>
         <input type="number" id ="q1o3" class="form-control" required min="0">
       </div>
-
       <div>
         <h5>2.- ¿Cuántas unidades vendiste?</h5>
       </div>
@@ -85,7 +97,6 @@
         </div>
         <input type="number" id ="q2o3" class="form-control" required min="0">
       </div>
-
       <div>
         <h5>3.- ¿Cuál fue el precio promedio en dolares de las unidades vendidas?</h5>
       </div>
@@ -107,7 +118,6 @@
         </div>
         <input type="number" id ="q3o3" class="form-control" required min="0">
       </div>
-
       <div>
         <h3>Demanda durante 2022</h3>
         <h5>4.- ¿Cuál fue la edad promedio de los compradores?</h5>
@@ -115,7 +125,6 @@
       <div class="input-group mb-3">
         <input type="number" id ="q4o1" class="form-control" required min="0">
       </div>
-
       <div>
         <h5>5.- De las casas vendidas, ¿cuántos clientes eran ...?</h5>
       </div>
@@ -137,7 +146,6 @@
         </div>
         <input type="number" id ="q5o3" class="form-control" required min="0">
       </div>
-
       <div>
         <h5>6.- De los lotes vendidos, ¿cuántos clientes eran ...?</h5>
       </div>
@@ -159,7 +167,6 @@
         </div>
         <input type="number" id ="q6o3" class="form-control" required min="0">
       </div>
-
       <div>
         <h5>7.- De los condominios vendidos, ¿cuántos clientes eran ...?</h5>
       </div>
@@ -181,7 +188,6 @@
         </div>
         <input type="number" id ="q7o3" class="form-control" required min="0">
       </div>
-
       <div>
         <h3>Escenario 2023</h3>
         <h5>8.- ¿Con cuántas unidades disponibles iniciaste?</h5>
@@ -204,13 +210,11 @@
         </div>
         <input type="number" id ="q8o3" class="form-control" required min="0">
       </div>
-
+      <h5 style="color: red;">Recuerda que no debes dejar ningún recuadro vacío, escribe un 0 (número cero) en los recuadros que no utilizaste.</h5>
       <button type="button" class="btn btn-primary btn-lg btn-block" onclick="sendData()">Enviar</button>
     </section>
   </div>
-  <div id="divToInsertHTMLTags">
-
-  </div>
+  <div id="divToInsertHTMLTags"></div>
 </body>
 <footer class="text-center">
   <a class="navbar-brand " href="https://www.facebook.com/CDTijuana" target="_blank">
@@ -220,14 +224,9 @@
   </a>
 </footer>
 <script>
-//   Swal.fire(
-//   'No dejar recuadros vacíos',
-//   'Escribe un 0 (número cero) en los recuadros que no vayas a utilizar',
-//   'info',
-// )
 Swal.fire({
         icon: "info",
-        title: "¡No dejar recuadros vacíos!",
+        title: "¡No dejes recuadros vacíos!",
         text: "Escribe un 0 (número cero) en los recuadros que no vayas a utilizar",
         confirmButtonColor: "#3085d6",
       });

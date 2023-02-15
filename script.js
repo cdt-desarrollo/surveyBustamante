@@ -1,6 +1,8 @@
 function sendData() {
   companyName = document.getElementById("companyName").value;
   staffName = document.getElementById("staffName").value;
+  email = document.getElementById("email").value;
+  phone = parseInt(document.getElementById("phone").value);
   q1o1 = parseInt(document.getElementById("q1o1").value);
   q1o2 = parseInt(document.getElementById("q1o2").value);
   q1o3 = parseInt(document.getElementById("q1o3").value);
@@ -26,6 +28,8 @@ function sendData() {
   // console.log(
   //   companyName,
   //   staffName,
+  //   email,
+  //   phone,
   //   q1o1,
   //   q1o2,
   //   q1o3,
@@ -51,7 +55,7 @@ function sendData() {
   // );
   Swal.fire({
     position: "center",
-    title: "Enviando información...",
+    title: "Enviando información",
     showConfirmButton: false,
     didOpen: () => {
       Swal.showLoading()
@@ -61,6 +65,8 @@ function sendData() {
   var data = JSON.stringify({
     companyName: `${companyName}`,
     staffName: `${staffName}`,
+    email: `${email}`,
+    phone: `${phone}`,
     q1o1: `${q1o1}`,
     q1o2: `${q1o2}`,
     q1o3: `${q1o3}`,
@@ -106,10 +112,10 @@ function sendData() {
       document.getElementById("deleteDiv").remove();
       let divToInsertHTMLTags = document.getElementById("divToInsertHTMLTags");
       let notification = document.createElement("div");
-      notification.innerHTML = `<h4 class="text-center">Ya puedes cerrar esta ventana/pestaña</h4>`;
+      notification.innerHTML = `<h4 class="text-center">Gracias por llenar la encuesta, ya puede cerrar esta ventana.</h4>`;
       divToInsertHTMLTags.insertAdjacentElement("beforeend", notification);
     })
-    .catch(function (error) {
+    .catch(() => {
       Swal.fire({
         icon: "error",
         title: "¡Algo salió mal!",
